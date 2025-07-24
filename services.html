@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Good angel Ministry</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>tailwind.config={theme:{extend:{colors:{primary:'#3b82f6',secondary:'#8b5cf6'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
+    <style>
+        :where([class^="ri-"])::before { content: "\f3c2"; }
+        body {
+            font-family: 'Open Sans', sans-serif;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+        }
+        .hero-section {
+            background-image: url('./istockphoto-2193265319-1024x1024.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: #3b82f6;
+        }
+        input[type="number"]::-webkit-inner-spin-button,
+        input[type="number"]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+        .custom-checkbox {
+            position: relative;
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+        }
+        .custom-checkbox input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        .checkmark {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 20px;
+            width: 20px;
+            background-color: #fff;
+            border: 2px solid #e5e7eb;
+            border-radius: 4px;
+        }
+        .custom-checkbox input:checked ~ .checkmark {
+            background-color: #3b82f6;
+            border-color: #3b82f6;
+        }
+        .checkmark:after {
+            content: "";
+            position: absolute;
+            display: none;
+        }
+        .custom-checkbox input:checked ~ .checkmark:after {
+            display: block;
+        }
+        .custom-checkbox .checkmark:after {
+            left: 6px;
+            top: 2px;
+            width: 5px;
+            height: 10px;
+            border: solid white;
+            border-width: 0 2px 2px 0;
+            transform: rotate(45deg);
+        }
+        .custom-switch {
+            position: relative;
+            display: inline-block;
+            width: 50px;
+            height: 24px;
+        }
+        .custom-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #e5e7eb;
+            transition: .4s;
+            border-radius: 34px;
+        }
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 18px;
+            width: 18px;
+            left: 3px;
+            bottom: 3px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+        input:checked + .slider {
+            background-color: #3b82f6;
+        }
+        input:checked + .slider:before {
+            transform: translateX(26px);
+        }
+        .gallery-image {
+            position: relative;
+            overflow: hidden;
+        }
+        .gallery-image img {
+            transition: transform 0.3s ease;
+        }
+        .gallery-image:hover img {
+            transform: scale(1.05);
+        }
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 10px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .gallery-image:hover .gallery-caption {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body class="bg-white">
+    <!-- Header -->
+    <header class="bg-white shadow-sm fixed w-full z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="#" class="flex items-center">
+                <span class="text-3xl font-['Pacifico'] text-primary">Good angel ministry</span>
+            </a>
+            <div class="md:hidden">
+                <button class="bg-primary text-white px-4 py-2 rounded-button font-medium hover:bg-blue-600 transition-colors">
+                    Donate Now
+                </button>
+            </div>
+
+            
+            <nav class="hidden md:flex space-x-6">
+                <a href="C:\Users\Admin\Desktop\evangelism\Home.html" class="text-gray-800 hover:text-primary font-medium transition-colors">Home</a>
+                <a href="C:\Users\Admin\Desktop\evangelism\Mission.html" class="text-gray-800 hover:text-primary font-medium transition-colors">Mission</a>
+                <a href="C:\Users\Admin\Desktop\evangelism\Team.html" class="text-gray-800 hover:text-primary font-medium transition-colors">Team</a>
+                <a href="C:\Users\Admin\Desktop\evangelism\services.html" class="text-gray-800 hover:text-primary font-medium transition-colors">Services</a>
+                <a href="C:\Users\Admin\Desktop\evangelism\Our impact.html" class="text-gray-800 hover:text-primary font-medium transition-colors">Our Impact</a>
+                <a href="C:\Users\Admin\Desktop\evangelism\Objective.html" class="text-gray-800 hover:text-primary font-medium transition-colors">Objective</a>
+                <a href="C:\Users\Admin\Desktop\evangelism\Contact Us.html" class="text-gray-800 hover:text-primary font-medium transition-colors">Contact Us</a>
+            </nav>
+            
+            <div class="flex items-center space-x-4">
+                <a href="C:\Users\Admin\Desktop\evangelism\donate.html" class="hidden md:inline-block bg-primary text-white px-5 py-2 !rounded-button font-medium hover:bg-blue-600 transition-colors whitespace-nowrap">Donate Now</a>
+                <button class="md:hidden w-10 h-10 flex items-center justify-center text-gray-700" id="mobile-menu-button">
+                    <i class="ri-menu-line ri-lg"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="md:hidden bg-white shadow-lg absolute w-full left-0 top-full hidden">
+            <div class="container mx-auto px-4 py-3 flex flex-col space-y-3">
+                <a href="#" class="text-gray-800 hover:text-primary font-medium py-2 transition-colors">Home</a>
+                <a href="#about us" class="text-gray-800 hover:text-primary font-medium py-2 transition-colors">About us</a>
+                <a href="#mission" class="text-gray-800 hover:text-primary font-medium py-2 transition-colors">Mission</a>
+                <a href="#vision" class="text-gray-800 hover:text-primary font-medium py-2 transition-colors">Vision</a>
+                <a href="#services" class="text-gray-800 hover:text-primary font-medium py-2 transition-colors">Services</a>
+                <a href="#contact" class="text-gray-800 hover:text-primary font-medium py-2 transition-colors">Contact</a>
+                <a href="#donate" class="bg-primary text-white px-5 py-2 !rounded-button font-medium hover:bg-blue-600 transition-colors text-center whitespace-nowrap">Donate Now</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section min-h-screen flex items-center pt-16">
+        
+    </section>
+
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Our Services</h2>
+                <div class="w-24 h-1 bg-primary mx-auto mb-6"></div>
+                <p class="text-gray-600 max-w-3xl mx-auto">We offer a variety of programs and services designed to nurture spiritual growth, provide community support, and create positive change in the world.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service Card 1 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 service-card">
+                    <div class="h-48 overflow-hidden">
+                        <img src="./1731144677638~2.jpg" alt="Worship Services" class="w-full h-full object-cover object-top">
+                    </div>
+                    <div class="p-6">
+                        <div class="w-12 h-12 flex items-center justify-center rounded-full bg-blue-100 text-primary mb-4">
+                            <i class="ri-church-line ri-lg"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Worship Services</h3>
+                        <p class="text-gray-600 mb-4">Join us for inspiring worship services that combine meaningful messages, uplifting music, and a welcoming community atmosphere.</p>
+                        <a href="#" class="text-primary font-medium flex items-center hover:underline">
+                            Learn More
+                            <i class="ri-arrow-right-line ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Service Card 2 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 service-card">
+                    <div class="h-48 overflow-hidden">
+                        <img src="./1752132518851.jpg" alt="Community Outreach" class="w-full h-full object-cover object-top">
+                    </div>
+                    <div class="p-6">
+                        <div class="w-12 h-12 flex items-center justify-center rounded-full bg-blue-100 text-primary mb-4">
+                            <i class="ri-hand-heart-line ri-lg"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Community Outreach</h3>
+                        <p class="text-gray-600 mb-4">Our outreach programs provide food, clothing, and support to those in need, bringing hope and practical assistance to our community.</p>
+                        <a href="#" class="text-primary font-medium flex items-center hover:underline">
+                            Learn More
+                            <i class="ri-arrow-right-line ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Service Card 3 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 service-card">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://readdy.ai/api/search-image?query=A%20small%20group%20Bible%20study%20or%20faith%20discussion%20in%20a%20cozy%2C%20well-lit%20room.%20People%20of%20different%20ages%20are%20sitting%20in%20a%20circle%2C%20engaged%20in%20conversation%20with%20open%20books.%20The%20atmosphere%20is%20intimate%20and%20supportive%2C%20with%20warm%20lighting%20and%20comfortable%20seating.%20The%20image%20conveys%20learning%2C%20sharing%2C%20and%20spiritual%20growth%20in%20a%20community%20setting.&width=600&height=400&seq=5&orientation=landscape" alt="Bible Studies" class="w-full h-full object-cover object-top">
+                    </div>
+                    <div class="p-6">
+                        <div class="w-12 h-12 flex items-center justify-center rounded-full bg-blue-100 text-primary mb-4">
+                            <i class="ri-book-open-line ri-lg"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Bible Studies</h3>
+                        <p class="text-gray-600 mb-4">Deepen your understanding through our engaging Bible studies that connect ancient wisdom with contemporary life challenges.</p>
+                        <a href="#" class="text-primary font-medium flex items-center hover:underline">
+                            Learn More
+                            <i class="ri-arrow-right-line ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Service Card 4 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 service-card">
+                    <div class="h-48 overflow-hidden">
+                        <img src="C:\Users\Admin\Downloads\IMG_20250615_182550_HDR~2.jpg" alt="Children's Ministry" class="w-full h-full object-cover object-top">
+                    </div>
+                    <div class="p-6">
+                        <div class="w-12 h-12 flex items-center justify-center rounded-full bg-blue-100 text-primary mb-4">
+                            <i class="ri-parent-line ri-lg"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Children's Ministry</h3>
+                        <p class="text-gray-600 mb-4">Our children's programs provide a fun, safe environment where kids can learn important values and develop their faith journey.</p>
+                        <a href="#" class="text-primary font-medium flex items-center hover:underline">
+                            Learn More
+                            <i class="ri-arrow-right-line ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Service Card 5 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 service-card">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://readdy.ai/api/search-image?query=A%20counseling%20or%20pastoral%20care%20session%20in%20a%20comfortable%2C%20private%20office%20setting.%20The%20image%20shows%20a%20compassionate%20counselor%20or%20pastor%20listening%20attentively%20to%20someone%20sharing%20their%20concerns.%20The%20environment%20is%20professional%20yet%20warm%2C%20with%20natural%20light%20and%20calming%20decor.%20The%20scene%20conveys%20trust%2C%20support%2C%20and%20healing%20through%20conversation.&width=600&height=400&seq=7&orientation=landscape" alt="Pastoral Care" class="w-full h-full object-cover object-top">
+                    </div>
+                    <div class="p-6">
+                        <div class="w-12 h-12 flex items-center justify-center rounded-full bg-blue-100 text-primary mb-4">
+                            <i class="ri-mental-health-line ri-lg"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Pastoral Care</h3>
+                        <p class="text-gray-600 mb-4">Our pastoral team provides compassionate counseling, support during life transitions, and spiritual guidance for personal growth.</p>
+                        <a href="#" class="text-primary font-medium flex items-center hover:underline">
+                            Learn More
+                            <i class="ri-arrow-right-line ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Service Card 6 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 service-card">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://readdy.ai/api/search-image?query=A%20diverse%20youth%20group%20engaged%20in%20an%20energetic%20activity%20or%20discussion.%20Teenagers%20of%20different%20backgrounds%20are%20interacting%2C%20laughing%2C%20and%20building%20community%20in%20a%20modern%2C%20welcoming%20space.%20The%20environment%20is%20designed%20for%20youth%20with%20contemporary%20furnishings%20and%20decor.%20The%20scene%20captures%20the%20energy%2C%20connection%2C%20and%20positive%20influence%20of%20youth%20ministry.&width=600&height=400&seq=8&orientation=landscape" alt="Youth Programs" class="w-full h-full object-cover object-top">
+                    </div>
+                    <div class="p-6">
+                        <div class="w-12 h-12 flex items-center justify-center rounded-full bg-blue-100 text-primary mb-4">
+                            <i class="ri-group-line ri-lg"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Youth Programs</h3>
+                        <p class="text-gray-600 mb-4">Engaging activities and mentorship opportunities that help young people develop strong values, leadership skills, and lasting friendships.</p>
+                        <a href="#" class="text-primary font-medium flex items-center hover:underline">
+                            Learn More
+                            <i class="ri-arrow-right-line ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <a href="#" class="flex items-center mb-4">
+                        <span class="text-3xl font-['Pacifico'] text-white"></span>
+                    </a>
+                    <p class="text-gray-400 mb-6">Spreading faith, hope, and love to communities around the world since 2022</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="ri-facebook-fill ri-lg"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="ri-twitter-fill ri-lg"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="ri-instagram-fill ri-lg"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="ri-youtube-fill ri-lg"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Home</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="#mission" class="text-gray-400 hover:text-white transition-colors">Mission & Vision</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-white transition-colors">Services</a></li>
+                        <li><a href="#donate" class="text-gray-400 hover:text-white transition-colors">Donate</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Services</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Worship Services</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Community Outreach</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Bible Studies</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Children's Ministry</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Newsletter</h4>
+                    <p class="text-gray-400 mb-4">Subscribe to receive updates on our ministry activities and upcoming events.</p>
+                    <form class="mb-4">
+                        <div class="flex">
+                            <input type="email" placeholder="Your email address" class="px-4 py-2 w-full border-none text-gray-700 focus:outline-none rounded-l">
+                            <button type="submit" class="bg-primary text-white px-4 py-2 !rounded-r-button whitespace-nowrap">Subscribe</button>
+                        </div>
+                    </form>
+                    <p class="text-gray-400 text-sm">We respect your privacy. Unsubscribe at any time.</p>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 text-sm mb-4 md:mb-0"> copyrigth© 2025 good angel ministry. All rights reserved.</p>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors text-sm">Privacy Policy</a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors text-sm">Terms of Service</a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors text-sm">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mobile menu toggle
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            mobileMenuButton.addEventListener('click', function() {
+                mobileMenu.classList.toggle('hidden');
+            });
+            
+            // Close mobile menu when clicking outside
+            document.addEventListener('click', function(event) {
+                if (!mobileMenuButton.contains(event.target) && !mobileMenu.contains(event.target)) {
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            // Gallery filter functionality
+            const filterButtons = document.querySelectorAll('.gallery-filter-btn');
+            const galleryItems = document.querySelectorAll('.gallery-image');
+            
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Remove active class from all buttons
+                    filterButtons.forEach(btn => {
+                        btn.classList.remove('active', 'bg-primary', 'text-white');
+                        btn.classList.add('bg-white', 'text-gray-700', 'border', 'border-gray-300');
+                    });
+                    
+                    // Add active class to clicked button
+                    this.classList.add('active', 'bg-primary', 'text-white');
+                    this.classList.remove('bg-white', 'text-gray-700', 'border', 'border-gray-300');
+                    
+                    const filter = this.getAttribute('data-filter');
+                    
+                    galleryItems.forEach(item => {
+                        if (filter === 'all' || item.getAttribute('data-category') === filter) {
+                            item.style.display = 'block';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            // Donation amount buttons
+            const donationButtons = document.querySelectorAll('.donation-amount-btn');
+            const customAmountInput = document.querySelector('.custom-amount-input');
+            
+            donationButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Remove active class from all buttons
+                    donationButtons.forEach(btn => {
+                        btn.classList.remove('bg-primary', 'text-white');
+                        btn.classList.add('bg-white', 'text-gray-700', 'border', 'border-gray-300');
+                    });
+                    
+                    // Add active class to clicked button
+                    this.classList.add('bg-primary', 'text-white');
+                    this.classList.remove('bg-white', 'text-gray-700', 'border', 'border-gray-300');
+                    
+                    // Show/hide custom amount input
+                    if (this.textContent === 'Other') {
+                        customAmountInput.classList.remove('hidden');
+                    } else {
+                        customAmountInput.classList.add('hidden');
+                    }
+                });
+            });
+            
+            // Radio button custom styling
+            const radioButtons = document.querySelectorAll('input[type="radio"]');
+            
+            radioButtons.forEach(radio => {
+                radio.addEventListener('change', function() {
+                    // Reset all radio indicators
+                    document.querySelectorAll('input[name="' + this.name + '"] + span span').forEach(span => {
+                        span.style.transform = 'scale(0)';
+                    });
+                    
+                    // Set the checked indicator
+                    if (this.checked) {
+                        this.nextElementSibling.querySelector('span').style.transform = 'scale(0.5)';
+                    }
+                });
+                
+                // Initialize checked state
+                if (radio.checked) {
+                    radio.nextElementSibling.querySelector('span').style.transform = 'scale(0.5)';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

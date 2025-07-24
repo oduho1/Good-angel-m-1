@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Good angel Ministry</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>tailwind.config={theme:{extend:{colors:{primary:'#3b82f6',secondary:'#8b5cf6'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title></title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
+    <style>
+        :where([class^="ri-"])::before { content: "\f3c2"; }
+        body {
+            font-family: 'Open Sans', sans-serif;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+        }
+        .hero-section {
+            background-image: url('https://readdy.ai/api/search-image?query=A%20serene%20and%20inspiring%20church%20landscape%20with%20soft%20golden%20sunlight%20streaming%20through%20stained%20glass%20windows%2C%20creating%20a%20peaceful%20atmosphere.%20The%20image%20shows%20a%20modern%20church%20interior%20with%20wooden%20elements%20and%20subtle%20religious%20symbols.%20The%20left%20side%20has%20a%20gradient%20to%20white%20for%20text%20overlay%2C%20while%20the%20right%20side%20shows%20the%20beautiful%20church%20architecture%20with%20natural%20light.&width=1920&height=1080&seq=1&orientation=landscape');
+            background-size: cover;
+            background-position: center;
+        }
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: #3b82f6;
+        }
+        input[type="number"]::-webkit-inner-spin-button,
+        input[type="number"]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+        .custom-checkbox {
+            position: relative;
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+        }
+        .custom-checkbox input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        .checkmark {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 20px;
+            width: 20px;
+            background-color: #fff;
+            border: 2px solid #e5e7eb;
+            border-radius: 4px;
+        }
+        .custom-checkbox input:checked ~ .checkmark {
+            background-color: #3b82f6;
+            border-color: #3b82f6;
+        }
+        .checkmark:after {
+            content: "";
+            position: absolute;
+            display: none;
+        }
+        .custom-checkbox input:checked ~ .checkmark:after {
+            display: block;
+        }
+        .custom-checkbox .checkmark:after {
+            left: 6px;
+            top: 2px;
+            width: 5px;
+            height: 10px;
+            border: solid white;
+            border-width: 0 2px 2px 0;
+            transform: rotate(45deg);
+        }
+        .custom-switch {
+            position: relative;
+            display: inline-block;
+            width: 50px;
+            height: 24px;
+        }
+        .custom-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #e5e7eb;
+            transition: .4s;
+            border-radius: 34px;
+        }
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 18px;
+            width: 18px;
+            left: 3px;
+            bottom: 3px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+        input:checked + .slider {
+            background-color: #3b82f6;
+        }
+        input:checked + .slider:before {
+            transform: translateX(26px);
+        }
+        .gallery-image {
+            position: relative;
+            overflow: hidden;
+        }
+        .gallery-image img {
+            transition: transform 0.3s ease;
+        }
+        .gallery-image:hover img {
+            transform: scale(1.05);
+        }
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 10px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .gallery-image:hover .gallery-caption {
+            opacity: 1;
+        }
+
+         /* Base Styles */
+         :root {
+                --primary: #3b82f6;
+                --secondary: #8b5cf6;
+                --dark: #1e293b;
+                --light: #f8fafc;
+                --gray: #64748b;
+                --light-gray: #e2e8f0;
+            }
+            
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            
+            body {
+                font-family: 'Open Sans', sans-serif;
+                background-color: var(--light);
+                color: var(--dark);
+                line-height: 1.6;
+            }
+            
+            h1, h2, h3, h4 {
+                font-family: 'Montserrat', sans-serif;
+                font-weight: 600;
+            }
+            
+            .container {
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 0 20px;
+            }
+            
+            section {
+                padding: 80px 0;
+            }
+            
+            .section-title {
+                text-align: center;
+                margin-bottom: 50px;
+            }
+            
+            .section-title h2 {
+                font-size: 2.5rem;
+                margin-bottom: 15px;
+                color: var(--dark);
+            }
+            
+            .section-title .divider {
+                width: 80px;
+                height: 4px;
+                background: linear-gradient(to right, var(--primary), var(--secondary));
+                margin: 0 auto 20px;
+                border-radius: 2px;
+            }
+            
+            .section-title p {
+                color: var(--gray);
+                max-width: 700px;
+                margin: 0 auto;
+            }
+            
+            /* Objectives & Values Grid */
+            .values-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 30px;
+            }
+            
+            /* Value Card Styles */
+            .value-card {
+                background: white;
+                border-radius: 12px;
+                padding: 30px;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+                transition: all 0.3s ease;
+                position: relative;
+                overflow: hidden;
+            }
+            
+            .value-card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+            }
+            
+            .value-card::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 5px;
+                height: 100%;
+                background: linear-gradient(to bottom, var(--primary), var(--secondary));
+            }
+            
+            .value-icon {
+                width: 60px;
+                height: 60px;
+                border-radius: 50%;
+                background: linear-gradient(135deg, var(--primary), var(--secondary));
+                color: white;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 1.5rem;
+                margin-bottom: 20px;
+                box-shadow: 0 5px 15px rgba(59, 130, 246, 0.3);
+            }
+            
+            .value-card h3 {
+                font-size: 1.4rem;
+                margin-bottom: 15px;
+                color: var(--dark);
+            }
+            
+            .value-card p {
+                color: var(--gray);
+                margin-bottom: 15px;
+            }
+            
+            /* Different color accents */
+            .value-card.faith .value-icon {
+                background: linear-gradient(135deg, #3b82f6, #2563eb);
+            }
+            
+            .value-card.community .value-icon {
+                background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+            }
+            
+            .value-card.service .value-icon {
+                background: linear-gradient(135deg, #10b981, #059669);
+            }
+            
+            .value-card.integrity .value-icon {
+                background: linear-gradient(135deg, #f59e0b, #d97706);
+            }
+            
+            /* Mission Statement Container */
+            .mission-container {
+                background: linear-gradient(135deg, var(--primary), var(--secondary));
+                color: white;
+                border-radius: 12px;
+                padding: 50px;
+                margin: 60px 0;
+                box-shadow: 0 15px 40px rgba(59, 130, 246, 0.2);
+                position: relative;
+                overflow: hidden;
+            }
+            
+            .mission-container::before {
+                content: '';
+                position: absolute;
+                top: -50px;
+                right: -50px;
+                width: 200px;
+                height: 200px;
+                background: rgba(255, 255, 255, 0.1);
+                border-radius: 50%;
+            }
+            
+            .mission-container::after {
+                content: '';
+                position: absolute;
+                bottom: -80px;
+                left: -80px;
+                width: 250px;
+                height: 250px;
+                background: rgba(255, 255, 255, 0.1);
+                border-radius: 50%;
+            }
+            
+            .mission-container h2 {
+                font-size: 2rem;
+                margin-bottom: 20px;
+                position: relative;
+                z-index: 1;
+            }
+            
+            .mission-container p {
+                font-size: 1.1rem;
+                line-height: 1.8;
+                position: relative;
+                z-index: 1;
+                max-width: 800px;
+            }
+            
+            /* Responsive adjustments */
+            @media (max-width: 768px) {
+                .values-grid {
+                    grid-template-columns: 1fr;
+                }
+                
+                .section-title h2 {
+                    font-size: 2rem;
+                }
+                
+                .mission-container {
+                    padding: 30px;
+                }
+                
+                .mission-container h2 {
+                    font-size: 1.6rem;
+                }
+                
+                .mission-container p {
+                    font-size: 1rem;
+                }
+            }
+             .typewriter {
+                        position: relative;
+                        width: fit-content;
+                        border-right: 2px solid white;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
+                    }
+                    .typewriter::before {
+                        content: attr(data-text);
+                    }
+                    @keyframes typing {
+                        from { width: 0 }
+                        to { width: 100% }
+                    }
+                    @keyframes blink-caret {
+                        from, to { border-color: transparent }
+                        50% { border-color: white }
+                    }
+    </style>
+
+</head>
+
+<body class="bg-white">
+    <!-- Header -->
+    <header class="bg-white shadow-sm fixed w-full z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="#" class="flex items-center">
+                <span class="text-3xl font-['Pacifico'] text-primary">Good angel ministry</span>
+            </a>
+            <div class="md:hidden">
+                <button class="bg-primary text-white px-4 py-2 rounded-button font-medium hover:bg-blue-600 transition-colors">
+                    Donate Now
+                </button>
+            </div>
+    
+            
+            <nav class="hidden md:flex space-x-6">
+                <a href="C:\Users\Admin\Desktop\evangelism\Home.html" class="text-gray-800 hover:text-primary font-medium transition-colors">Home</a>
+                <a href="C:\Users\Admin\Desktop\evangelism\Mission.html" class="text-gray-800 hover:text-primary font-medium transition-colors">Mission</a>
+                <a href="C:\Users\Admin\Desktop\evangelism\Team.html" class="text-gray-800 hover:text-primary font-medium transition-colors">Team</a>
+                <a href="C:\Users\Admin\Desktop\evangelism\services.html" class="text-gray-800 hover:text-primary font-medium transition-colors">Services</a>
+                <a href="C:\Users\Admin\Desktop\evangelism\Our impact.html" class="text-gray-800 hover:text-primary font-medium transition-colors">Our Impact</a>
+                <a href="C:\Users\Admin\Desktop\evangelism\Objective.html" class="text-gray-800 hover:text-primary font-medium transition-colors">Objective</a>
+                <a href="C:\Users\Admin\Desktop\evangelism\Contact Us.html" class="text-gray-800 hover:text-primary font-medium transition-colors">Contact Us</a>
+            </nav>
+            
+            <div class="flex items-center space-x-4">
+                <a href="C:\Users\Admin\Desktop\evangelism\donate.html" class="hidden md:inline-block bg-primary text-white px-5 py-2 !rounded-button font-medium hover:bg-blue-600 transition-colors whitespace-nowrap">Donate Now</a>
+                <button class="md:hidden w-10 h-10 flex items-center justify-center text-gray-700" id="mobile-menu-button">
+                    <i class="ri-menu-line ri-lg"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="md:hidden bg-white shadow-lg absolute w-full left-0 top-full hidden">
+            <div class="container mx-auto px-4 py-3 flex flex-col space-y-3">
+                <a href="#" class="text-gray-800 hover:text-primary font-medium py-2 transition-colors">Home</a>
+                <a href="#about us" class="text-gray-800 hover:text-primary font-medium py-2 transition-colors">About us</a>
+                <a href="#mission" class="text-gray-800 hover:text-primary font-medium py-2 transition-colors">Mission</a>
+                <a href="#vision" class="text-gray-800 hover:text-primary font-medium py-2 transition-colors">Vision</a>
+                <a href="#services" class="text-gray-800 hover:text-primary font-medium py-2 transition-colors">Services</a>
+                <a href="#contact" class="text-gray-800 hover:text-primary font-medium py-2 transition-colors">Contact</a>
+                <a href="#donate" class="bg-primary text-white px-5 py-2 !rounded-button font-medium hover:bg-blue-600 transition-colors text-center whitespace-nowrap">Donate Now</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section min-h-screen flex items-center pt-16 relative">
+        <div class="container mx-auto px-4 flex flex-col lg:flex-row items-center justify-between relative z-10">
+            <div class="w-full lg:w-1/2 text-white mb-8 lg:mb-0">
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 typewriter" data-text="Welcome to Good Angel Ministry"></h1>
+                
+                <p class="text-lg md:text-xl mb-8 opacity-90">Spreading faith, hope, and love to communities around the world.</p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="C:\Users\Admin\Desktop\evangelism\Contact Us.html" class="bg-primary hover:bg-blue-600 text-white px-8 py-3 rounded-button font-medium transition-colorssers\Admin\Desktop\evangelism\Contact Us.html" class="bg-white hover:bg-gray-100 text-primary px-8 py-3 rounded-button font-medium transition-colors">Contact Us</a>
+                </div>
+    
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">About Our Ministry</h2>
+                <div class="w-24 h-1 bg-primary mx-auto mb-6"></div>
+                <p class="text-gray-600 max-w-3xl mx-auto">Founded in 2022, Good angel ministry has been dedicated to spreading the message of faith a  to comig-opieity-5n need. Our journey began with a small group of dedicated individuals and has grown into a global movement.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Our Story</h3>
+                    <p class="text-gray-600 mb-4">Good angel ministry was born from a vision to create a space where people from all walks of life could find spiritual guidance, community support, and opportunities to serve others. What started as small gatherings in living rooms has blossomed into a vibrant ministry reaching thousands.</p>
+                    <p class="text-gray-600 mb-6">Over the years, we've expanded our outreach programs, built community centers, and developed initiatives that address both spiritual and practical needs. Our dedicated team of volunteers and staff work tirelessly to ensure that our ministry continues to be a beacon of hope for all.</p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 flex items-center justify-center rounded-full bg-primary text-white mr-4">
+                            <i class="ri-user-heart-line ri-lg"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-800">Alfred taban</h4>
+                            <p class="text-gray-600">Founder & Lead Pastor</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="rounded-lg overflow-hidden shadow-lg">
+                    <img src="https://readdy.ai/api/search-image?query=A%20diverse%20group%20of%20people%20volunteering%20together%20at%20a%20community%20outreach%20event.%20They%20are%20smiling%20and%20helping%20distribute%20food%20and%20supplies%20to%20those%20in%20need.%20The%20image%20shows%20people%20of%20different%20ages%20and%20backgrounds%20working%20together%20in%20harmony%2C%20with%20a%20church%20or%20community%20center%20visible%20in%20the%20background.%20The%20scene%20is%20bright%20and%20hopeful%2C%20showing%20the%20positive%20impact%20of%20community%20service.&width=600&height=400&seq=2&orientation=landscape" alt="Ministry volunteers in action" class="w-full h-full object-cover object-top">
+                </div>
+            </div>
+        </div>
+    </section>
+
+        
+        <!-- Core Values Section -->
+        <section class="values-section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Our Core Values</h2>
+                    <div class="divider"></div>
+                    <p>These foundational principles guide everything we do as a ministry</p>
+                </div>
+                
+                <div class="values-grid">
+                    <!-- Value 1 -->
+                    <div class="value-card faith">
+                        <div class="value-icon">
+                            <i class="fas fa-bible"></i>
+                        </div>
+                        <h3>Biblical Foundation</h3>
+                        <p>We are committed to the authority of Scripture as our guide for faith and practice.</p>
+                    </div>
+                    
+                    <!-- Value 2 -->
+                    <div class="value-card community">
+                        <div class="value-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3>Authentic Community</h3>
+                        <p>We value relationships built on love, transparency, and mutual support.</p>
+                    </div>
+                    
+                    <!-- Value 3 -->
+                    <div class="value-card service">
+                        <div class="value-icon">
+                            <i class="fas fa-hands-praying"></i>
+                        </div>
+                        <h3>Compassionate Service</h3>
+                        <p>We demonstrate Christ's love by serving others with humility and generosity.</p>
+                    </div>
+                    
+                    <!-- Value 4 -->
+                    <div class="value-card integrity">
+                        <div class="value-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3>Integrity</h3>
+                        <p>We strive for consistency between our beliefs and actions in all areas of life.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </body>
+    
+
+    
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <a href="#" class="flex items-center mb-4">
+                        <span class="text-3xl font-['Pacifico'] text-white"></span>
+                    </a>
+                    <p class="text-gray-400 mb-6">Spreading faith, hope, and love to communities around the world since 2022</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="ri-facebook-fill ri-lg"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="ri-twitter-fill ri-lg"></i>
+                        </a>
+                        <a href="" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="ri-instagram-fill ri-lg"></i>
+                        </a>
+                        <a href="https://www.youtube.com/watch?v=YKJ_n0TJi9o" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="ri-youtube-fill ri-lg"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Home</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="#mission" class="text-gray-400 hover:text-white transition-colors">Mission & Vision</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-white transition-colors">Services</a></li>
+                        <li><a href="#donate" class="text-gray-400 hover:text-white transition-colors">Donate</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Services</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Worship Services</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Community Outreach</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Bible Studies</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Children's Ministry</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Newsletter</h4>
+                    <p class="text-gray-400 mb-4">Subscribe to receive updates on our ministry activities and upcoming events.</p>
+                    <form class="mb-4">
+                        <div class="flex">
+                            <input type="email" placeholder="Your email address" class="px-4 py-2 w-full border-none text-gray-700 focus:outline-none rounded-l">
+                            <button type="submit" class="bg-primary text-white px-4 py-2 !rounded-r-button whitespace-nowrap">Subscribe</button>
+                        </div>
+                    </form>
+                    <p class="text-gray-400 text-sm">We respect your privacy. Unsubscribe at any time.</p>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 text-sm mb-4 md:mb-0"> Copyrigth© 2025 'Good Angel Ministry. All rights reserved.</p>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors text-sm">Privacy Policy</a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors text-sm">Terms of Service</a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors text-sm">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mobile menu toggle
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            mobileMenuButton.addEventListener('click', function() {
+                mobileMenu.classList.toggle('hidden');
+            });
+            
+            // Close mobile menu when clicking outside
+            document.addEventListener('click', function(event) {
+                if (!mobileMenuButton.contains(event.target) && !mobileMenu.contains(event.target)) {
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            // Gallery filter functionality
+            const filterButtons = document.querySelectorAll('.gallery-filter-btn');
+            const galleryItems = document.querySelectorAll('.gallery-image');
+            
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Remove active class from all buttons
+                    filterButtons.forEach(btn => {
+                        btn.classList.remove('active', 'bg-primary', 'text-white');
+                        btn.classList.add('bg-white', 'text-gray-700', 'border', 'border-gray-300');
+                    });
+                    
+                    // Add active class to clicked button
+                    this.classList.add('active', 'bg-primary', 'text-white');
+                    this.classList.remove('bg-white', 'text-gray-700', 'border', 'border-gray-300');
+                    
+                    const filter = this.getAttribute('data-filter');
+                    
+                    galleryItems.forEach(item => {
+                        if (filter === 'all' || item.getAttribute('data-category') === filter) {
+                            item.style.display = 'block';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            // Donation amount buttons
+            const donationButtons = document.querySelectorAll('.donation-amount-btn');
+            const customAmountInput = document.querySelector('.custom-amount-input');
+            
+            donationButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Remove active class from all buttons
+                    donationButtons.forEach(btn => {
+                        btn.classList.remove('bg-primary', 'text-white');
+                        btn.classList.add('bg-white', 'text-gray-700', 'border', 'border-gray-300');
+                    });
+                    
+                    // Add active class to clicked button
+                    this.classList.add('bg-primary', 'text-white');
+                    this.classList.remove('bg-white', 'text-gray-700', 'border', 'border-gray-300');
+                    
+                    // Show/hide custom amount input
+                    if (this.textContent === 'Other') {
+                        customAmountInput.classList.remove('hidden');
+                    } else {
+                        customAmountInput.classList.add('hidden');
+                    }
+                });
+            });
+            
+            // Radio button custom styling
+            const radioButtons = document.querySelectorAll('input[type="radio"]');
+            
+            radioButtons.forEach(radio => {
+                radio.addEventListener('change', function() {
+                    // Reset all radio indicators
+                    document.querySelectorAll('input[name="' + this.name + '"] + span span').forEach(span => {
+                        span.style.transform = 'scale(0)';
+                    });
+                    
+                    // Set the checked indicator
+                    if (this.checked) {
+                        this.nextElementSibling.querySelector('span').style.transform = 'scale(0.5)';
+                    }
+                });
+                
+                // Initialize checked state
+                if (radio.checked) {
+                    radio.nextElementSibling.querySelector('span').style.transform = 'scale(0.5)';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
